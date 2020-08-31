@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="712.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.Controller">
+    <children>
+        <TabPane prefHeight="433.0" prefWidth="712.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Klienci">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="458.0" prefWidth="493.0">
+                            <children>
+                                <TableView fx:id="klienci" prefHeight="403.0" prefWidth="712.0">
+                                    <columns>
+                                        <TableColumn fx:id="imie_klienta" prefWidth="75.0" text="imie" />
+                                        <TableColumn fx:id="nazwisko_klienta" prefWidth="75.0" text="nazwisko" />
+                                        <TableColumn fx:id="nr_konta" prefWidth="75.0" text="nr konta" />
+                                        <TableColumn fx:id="pesel_klienta" prefWidth="75.0" text="pesel" />
+                                        <TableColumn fx:id="kod_pocztowy" prefWidth="75.0" text="kod pocztowy" />
+                                        <TableColumn fx:id="ulica" prefWidth="75.0" text="ulica" />
+                                        <TableColumn fx:id="nr_lokalu" prefWidth="75.0" text="nr_lokalu" />
+                                        <TableColumn fx:id="miejscowosc" prefWidth="75.0" text="miejscowosc" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Operacje">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="operacje" prefHeight="407.0" prefWidth="712.0">
+                                    <columns>
+                                        <TableColumn fx:id="nr_konta_operacje" prefWidth="75.0" text="nr_konta" />
+                                        <TableColumn fx:id="rodzaj_operacji" prefWidth="75.0" text="rodzaj_operacji" />
+                                        <TableColumn fx:id="miasto_operacje" prefWidth="75.0" text="miasto" />
+                                        <TableColumn fx:id="ulica_operacje" prefWidth="75.0" text="ulica" />
+                                        <TableColumn fx:id="kwota_operacji" prefWidth="75.0" text="kwota" />
+                                        <TableColumn fx:id="data_operacji" prefWidth="75.0" text="data" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Bilans operacji">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="table_bilans_operacji" layoutY="61.0" prefHeight="346.0" prefWidth="419.0">
+                                    <columns>
+                                        <TableColumn fx:id="sum_miasto" prefWidth="75.0" text="Miasto" />
+                                        <TableColumn fx:id="sum_rodzaj_operacji" prefWidth="119.0" text="Rodzaj operacji" />
+                                        <TableColumn fx:id="sum_suma_operacji" prefWidth="140.0" text="Suma operacji" />
+                                    </columns>
+                                </TableView>
+                                <ChoiceBox fx:id="choice_miasto" layoutX="126.0" layoutY="14.0" prefWidth="150.0" />
+                                <Text layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz miasto:" wrappingWidth="97.97265625" />
+                                <Button fx:id="sum_miasto_wykonaj" layoutX="312.0" layoutY="14.0" mnemonicParsing="false" onAction="#bilans_button" text="Wykonaj" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Podsumowanie przelewow">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="table_view_przelewy" layoutY="47.0" prefHeight="361.0" prefWidth="411.0">
+                                    <columns>
+                                        <TableColumn fx:id="rok_przelewy" prefWidth="75.0" text="Rok" />
+                                        <TableColumn fx:id="miesiac_przelewy" prefWidth="149.0" text="Miesiąc" />
+                                        <TableColumn fx:id="kwota_przelewy" prefWidth="186.0" text="Kwota" />
+                                    </columns>
+                                </TableView>
+                                <Button fx:id="button_przelewy" layoutX="284.0" layoutY="9.0" mnemonicParsing="false" onAction="#p_button" text="Szukaj" />
+                                <ChoiceBox fx:id="choice_przelewy_miesiac" layoutX="111.0" layoutY="9.0" prefWidth="150.0" />
+                                <Text layoutX="23.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz:" wrappingWidth="63.451171875" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Statystyka">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="tv_statystyka" layoutY="57.0" prefHeight="350.0" prefWidth="712.0">
+                                    <columns>
+                                        <TableColumn fx:id="nr_konta_statystyka" prefWidth="140.0" text="nr_konta" />
+                                        <TableColumn fx:id="imie_statystyka" minWidth="0.0" prefWidth="139.0" text="imie" />
+                                        <TableColumn fx:id="nazwisko_statystyka" prefWidth="143.0" text="nazwisko" />
+                                        <TableColumn fx:id="suma_statystyka" prefWidth="100.0" text="suma" />
+                                    </columns>
+                                </TableView>
+                                <Button fx:id="b_statystyka" layoutX="391.0" layoutY="22.0" mnemonicParsing="false" onAction="#s_button" text="Szukaj" />
+                                <ChoiceBox fx:id="choice_statystyka" layoutX="212.0" layoutY="22.0" prefWidth="150.0" />
+                                <Text layoutX="144.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Statystyka :" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
